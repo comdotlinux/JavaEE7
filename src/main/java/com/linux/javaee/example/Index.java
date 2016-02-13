@@ -5,12 +5,14 @@ import java.util.logging.Logger;
 import javax.annotation.PostConstruct;
 import javax.enterprise.inject.Model;
 import javax.inject.Inject;
+import javax.interceptor.Interceptors;
 
 /**
  *
  * @author guru.a.kulkarni
  */
 @Model
+@Interceptors(PerformanceMonitor.class)
 public class Index {
     
     private static final Logger LOG = Logger.getLogger(Index.class.getName());

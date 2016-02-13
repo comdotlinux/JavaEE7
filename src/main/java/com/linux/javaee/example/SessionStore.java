@@ -4,6 +4,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.ejb.Asynchronous;
 import javax.ejb.Stateless;
+import javax.interceptor.Interceptors;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -12,6 +13,7 @@ import javax.persistence.PersistenceContext;
  * @author guru
  */
 @Stateless
+@Interceptors(PerformanceMonitor.class)
 public class SessionStore {
    
     private static final Logger LOG = Logger.getLogger(SessionStore.class.getName());
