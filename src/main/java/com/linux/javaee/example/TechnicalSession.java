@@ -3,6 +3,7 @@ package com.linux.javaee.example;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.Size;
 
 /**
  *
@@ -15,6 +16,7 @@ public class TechnicalSession {
     @GeneratedValue
     private String id;
     
+    @Size(min = 8, max = 20)
     private String name;
 
     public TechnicalSession(String id, String name) {
